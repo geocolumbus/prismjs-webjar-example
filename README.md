@@ -1,11 +1,11 @@
 # Code colorizer example with [Prism](http://prismjs.com/)
 
-## Requirements
+### Requirements
 
 * Java 8
 * Maven
 
-## Try it!
+### Try it!
 
         git clone https://github.com/geocolumbus/colorizer.git
         cd colorizer
@@ -13,16 +13,13 @@
 
         Navigate to localhost:8080
 
-## How it works
+### How it works
 
 Build the CSS and JS files [here](http://prismjs.com/download.html).
 
-Load the CSS file.
+Load these two files:
 
-        prism.css
-        
-Load the core javascript file:
-
+        prism.css        
         prism.js
 
 Execute prism after the html is loaded:
@@ -50,7 +47,7 @@ Code to be formatted should be wrapped in pre and code tags like this:
         </code>
         </pre>
         
-in the case of xml, I did have to do a global replace on "<" to "&amp;lt;". I did not do that here for clarity.
+in the case of xml, I did have to do a global replace on "<" to "&amp;lt;".
 
         // You have to handle left angle brackets in XML
         $('.xml').each(function () {
@@ -86,14 +83,13 @@ For the sake of clarity, I left the angle brackets unconverted in the example be
         </code>
         </pre>
 
-## Pros
+### Pros
 
-* Dead simple to use - one js and one css file.
+* Dead simple to use - one js and one css file, and easy markup.
 * Looks good
 * Current
 
-## Cons
+### Cons
 
-* No webjar 
+* No webjar (css and js are custom built so we'll be including those)
 * Have to escape left angle brackets inside the pre tags.
-
