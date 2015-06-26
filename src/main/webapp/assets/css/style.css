@@ -1,0 +1,13 @@
+body {
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+}
+
+.code {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    overflow: hidden;
+}
