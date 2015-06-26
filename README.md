@@ -43,26 +43,7 @@ Use the autoloader to load the specific "brushes" you need. For example:
 
 Code to be formatted should be wrapped in script tags. Using &lt;script&gt; tags means you don't have to convert < to &amp;lt; like with &lt;pre&gt; tags.
 
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-        {  
-           "menu":{  
-              "id":"file",
-              "value":"File",
-              "popup":{  
-                 "menuitem":[  
-                    {  
-                       "value":"New",
-                       "onclick":"CreateNewDoc()"
-                    }
-                 ]
-              }
-           }
-        }
-        ]]></script>
-        
-or
-
-        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+                <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
         <?xml version="1.0"?>
         <catalog>
            <book id="bk101">
@@ -86,6 +67,25 @@ or
            </book>
         </catalog>
         ]]></script>
+        
+or
+
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+        {  
+           "menu":{  
+              "id":"file",
+              "value":"File",
+              "popup":{  
+                 "menuitem":[  
+                    {  
+                       "value":"New",
+                       "onclick":"CreateNewDoc()"
+                    }
+                 ]
+              }
+           }
+        }
+        ]]></script>
 
 ## Pros
 
@@ -97,5 +97,5 @@ or
 ## Cons
 
 * The webjar does not work - it references buggy code. I've [submitted two issues to the webjar Github Repository](https://github.com/webjars/syntaxhighlighter/issues) so hopefully it will get addressed. In the meantime, we have to add all the javascript files to our project.
-* Does not offer a plain text mode like some syntax highlighters do.
+* Does not offer a plain text mode for easy copying like some syntax highlighters do.
 
