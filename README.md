@@ -96,6 +96,6 @@ or
 
 ## Cons
 
-* The webjar does not work - it references buggy code. I've [submitted two issues to the webjar Github Repository](https://github.com/webjars/syntaxhighlighter/issues) so hopefully it will get addressed. In the meantime, we have to add all the javascript files to our project.
+* The webjar does not work - it references buggy code. I've [submitted two issues to the webjar Github Repository](https://github.com/webjars/syntaxhighlighter/issues) (and they already fixed one) so hopefully it will get addressed. In the meantime, we have to add all the javascript files to our project.
 * Does not offer a plain text mode for easy copying like some syntax highlighters do.
 
