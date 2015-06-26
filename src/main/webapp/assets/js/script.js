@@ -1,5 +1,5 @@
 "use strict";
-require(["jquery", "bootstrap", "shCore", "shAutoloader"/*,"xregexp"*/], function ($, bootstrap) {
+require(["jquery", "bootstrap", "shCore", "shAutoloader"], function ($, bootstrap) {
     SyntaxHighlighter.autoloader(
         ['js','/assets/js/brush/shBrushJScript.js'],
         ['xml', '/assets/js/brush/shBrushXml.js'],

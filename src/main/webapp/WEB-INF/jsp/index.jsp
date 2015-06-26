@@ -28,22 +28,22 @@
 
 <h2>XML</h2>
 <div class="code">
-    <script type="syntaxhighlighter" class="brush: xml"><![CDATA[${item0}</script>
+    <script type="syntaxhighlighter" class="brush: xml"><![CDATA[${item0}]]></script>
 </div>
 
 <h2>JSON</h2>
 <div class="code">
-    <script type="syntaxhighlighter" class="brush: js"><![CDATA[${item1}</script>
+    <script type="syntaxhighlighter" class="brush: js"><![CDATA[${item1}]]></script>
 </div>
 
 <h2>HTML</h2>
 <div class="code">
-    <script type="syntaxhighlighter" class="brush: html"><![CDATA[${item2}</script>
+    <script type="syntaxhighlighter" class="brush: html"><![CDATA[${item2}]]></script>
 </div>
 
 <h2>Plain Text</h2>
 <div class="code">
-    <script type="syntaxhighlighter" class="brush: text"><![CDATA[${item3}</script>
+    <script type="syntaxhighlighter" class="brush: text"><![CDATA[${item3}]]></script>
 </div>
 
 <script src="/assets/js/script.js"></script>

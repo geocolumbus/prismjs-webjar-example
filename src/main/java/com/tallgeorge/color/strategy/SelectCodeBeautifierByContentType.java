@@ -15,7 +15,7 @@ public class SelectCodeBeautifierByContentType implements SelectCodeBeautifier {
      * {@inheritDoc}
      */
     @Override
-    public final BeautifyCode lookupByContentType(final String contentTypeName) {
+    public BeautifyCode lookupByContentType(final String contentTypeName) {
 
         BeautifyCode beautifyCodeStrategy;
 

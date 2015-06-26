@@ -11,8 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfiguration {
 
+    /**
+     * Register the code beautifier bean
+     * @return the code beautifier class
+     */
     @Bean
-    SelectCodeBeautifier selectCodeBeautifier() {
+    public SelectCodeBeautifier selectCodeBeautifier() {
         return new SelectCodeBeautifierByContentType();
     }
 }
