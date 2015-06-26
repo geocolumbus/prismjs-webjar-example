@@ -1,11 +1,13 @@
 "use strict";
-require(["jquery", "bootstrap", "shCore", "shAutoloader"], function ($, bootstrap) {
-    SyntaxHighlighter.autoloader(
-        ['js','/assets/js/brush/shBrushJScript.js'],
-        ['xml', '/assets/js/brush/shBrushXml.js'],
-        ['text','plain','/assets/js/brush/shBrushPlain.js']
-    );
-    SyntaxHighlighter.config.tagName='script';
-    SyntaxHighlighter.all();
+require(["jquery", "bootstrap", "prism"], function ($, bootstrap) {
+
+    // Initialize -----------------------------------------------------------------------------------------------------
+
+    // You have to handle left angle brackets in XML
+    $('.xml').each(function () {
+        $(this).html($(this).html().replace(/</g, "&lt;"));
+    });
+
+    Prism.highlightAll();
 });
 

@@ -7,19 +7,16 @@ var require = {
 
         "bootstrap-css": ["../../webjars/bootstrap/3.3.1/css/bootstrap", "css/bootstrap"],
 
-        "shCore": ["/assets/js/brush/shCore", "scripts/shCore"],
-
-        "shAutoloader": ["/assets/js/brush/shAutoloader", "scripts/shAutoloader"],
-
         "jquery": ["../../webjars/jquery/1.11.1/jquery", "jquery"],
 
-        "domReady": ["../../webjars/requirejs-domready/2.0.1/domReady", "domReady"]
+        "domReady": ["../../webjars/requirejs-domready/2.0.1/domReady", "domReady"],
+
+        "prism": ["/assets/js/prism/prism", "js/prism/prism"]
     },
 
     shim: {
         "jquery": {"exports": "$"},
-        "bootstrap": {"deps": ["jquery"]},
-        "shAutoloader": {"deps": ["shCore"]}
+        "bootstrap": {"deps": ["jquery"]}
     },
 
     deps: ["jquery"],

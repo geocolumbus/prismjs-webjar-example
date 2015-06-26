@@ -15,38 +15,42 @@
     </script>
     <script src="<c:url value='/webjars/requirejs/2.1.18/require.min.js'/>"></script>
 
-    <link rel="stylesheet" href="<c:url value='/assets/css/brush/shCore.css'/>"/>
-    <link rel="stylesheet" href="<c:url value='/assets/css/brush/shCoreDefault.css'/>"/>
-    <link rel="stylesheet" href="<c:url value='/assets/css/brush/shThemeDefault.css'/>"/>
-    <!-- <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.1/css/bootstrap.min.css'/>"/>-->
+    <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.1/css/bootstrap.min.css'/>"/>
     <link rel="stylesheet" href="<c:url value='/assets/css/style.css'/>"/>
+    <link rel="stylesheet" href="<c:url value='/assets/css/prism/prism.css'/>"/>
 
 </head>
 <body>
 
 <h1>Colorizer Tester</h1>
 
-<h2>XML</h2>
-<div class="code">
-    <script type="syntaxhighlighter" class="brush: xml"><![CDATA[${item0}]]></script>
+<div id="container-jsprism" class="demo-container">
+
+    <h2>JsPrism</h2>
+
+    <h3>XML</h3>
+    <div class="code">
+        <pre class="language-markup"><code class="language-markup xml">${item0}</code></pre>
+    </div>
+
+    <h3>JSON</h3>
+    <div class="code">
+        <pre class="language-javascript"><code class="language-javascript">${item1}</code></pre>
+    </div>
+
+    <h3>HTML</h3>
+    <div class="code">
+        <pre class="language-markup"><code class="language-markup">${item2}</code></pre>
+    </div>
+
+    <h3>Plain Text</h3>
+    <div class="code">
+        <pre class="language-none"><code class="language-none">${item3}</code></pre>
+    </div>
+
 </div>
 
-<h2>JSON</h2>
-<div class="code">
-    <script type="syntaxhighlighter" class="brush: js"><![CDATA[${item1}]]></script>
-</div>
-
-<h2>HTML</h2>
-<div class="code">
-    <script type="syntaxhighlighter" class="brush: html"><![CDATA[${item2}]]></script>
-</div>
-
-<h2>Plain Text</h2>
-<div class="code">
-    <script type="syntaxhighlighter" class="brush: text"><![CDATA[${item3}]]></script>
-</div>
-
-<script src="/assets/js/script.js"></script>
+<script src="/assets/js/script.js" class="demo-container"></script>
 
 </body>
 </html>

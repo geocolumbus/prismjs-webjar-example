@@ -1,13 +1,8 @@
 body {
-    background-color: lightgoldenrodyellow;
+    background-color: lightblue;
     padding: 20px;
 }
 
-.code {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 12px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    overflow: hidden;
+.demo-container {
+    overflow:hidden;
 }

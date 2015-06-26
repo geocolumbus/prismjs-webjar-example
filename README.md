@@ -1,4 +1,4 @@
-# Code colorizer example with [Syntaxhighlighter](http://alexgorbatchev.com/SyntaxHighlighter/)
+# Code colorizer example with [Prism](http://prismjs.com/)
 
 ## Requirements
 
@@ -15,35 +15,24 @@
 
 ## How it works
 
-Load the CSS files.
+Build the CSS and JS files [here](http://prismjs.com/download.html).
 
-        shCore.css
-        shCoreDefault.css
-        shThemeDefault.css
+Load the CSS file.
+
+        prism.css
         
-Load the core javascript files:
+Load the core javascript file:
 
-        shCore.js
-        shAutoLoader.js
+        prism.js
 
-Use the autoloader to load the specific "brushes" you need. For example:
+Execute prism after the html is loaded:
 
-        SyntaxHighlighter.autoloader(
-                ['js','/assets/js/brush/shBrushJScript.js'],
-                ['xml', '/assets/js/brush/shBrushXml.js'],
-                ['text','plain','/assets/js/brush/shBrushPlain.js']
-            );
-        
-        // Change tag type to be colorized from the default <pre> to <script>
-        SyntaxHighlighter.config.tagName='script';
-        
-        // Execute the formatting
-        SyntaxHighlighter.all();
+        Prism.highlightAll();
        
+Code to be formatted should be wrapped in pre and code tags like this:
 
-Code to be formatted should be wrapped in script tags. Using &lt;script&gt; tags means you don't have to convert < to &amp;lt; like with &lt;pre&gt; tags.
-
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+        <pre class="language-javascript">
+        <code class="language-javascript">
         {  
            "menu":{  
               "id":"file",
@@ -58,11 +47,20 @@ Code to be formatted should be wrapped in script tags. Using &lt;script&gt; tags
               }
            }
         }
-        ]]></script>
+        </code>
+        </pre>
         
-or
+in the case of xml, I did have to do a global replace on "<" to "&amp;lt;". I did not do that here for clarity.
 
-        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+        // You have to handle left angle brackets in XML
+        $('.xml').each(function () {
+            $(this).html($(this).html().replace(/</g, "&lt;"));
+         });
+
+For the sake of clarity, I left the angle brackets unconverted in the example below.
+
+        <pre class="language-markup">
+        <code class="language-markup">
         <?xml version="1.0"?>
         <catalog>
            <book id="bk101">
@@ -85,17 +83,17 @@ or
               of the world.</description>
            </book>
         </catalog>
-        ]]></script>
+        </code>
+        </pre>
 
 ## Pros
 
-* Looks good.
-* Same syntax highlighter used by Developer Network.
-* Covers every conceivable return type.
-* Pretty easy to use
+* Dead simple to use - one js and one css file.
+* Looks good
+* Current
 
 ## Cons
 
-* The webjar does not work - it references buggy code. I've [submitted two issues to the webjar Github Repository](https://github.com/webjars/syntaxhighlighter/issues) so hopefully it will get addressed. In the meantime, we have to add all the javascript files to our project.
-* Does not offer a plain text mode like some syntax highlighters do.
+* No webjar 
+* Have to escape left angle brackets inside the pre tags.
 
