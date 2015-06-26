@@ -1,11 +1,11 @@
-# Code colorizer example with [Syntaxhighlighter](http://alexgorbatchev.com/SyntaxHighlighter/)
+## Code colorizer example with [Syntaxhighlighter](http://alexgorbatchev.com/SyntaxHighlighter/)
 
-## Requirements
+### Requirements
 
 * Java 8
 * Maven
 
-## Try it!
+### Try it!
 
         git clone https://github.com/geocolumbus/colorizer.git
         cd colorizer
@@ -13,7 +13,7 @@
 
         Navigate to localhost:8080
 
-## How it works
+### How it works
 
 Load the CSS files.
 
@@ -87,14 +87,14 @@ or
         }
         ]]></script>
 
-## Pros
+### Pros
 
 * Looks good.
 * Same syntax highlighter used by Developer Network.
 * Covers every conceivable return type.
 * Pretty easy to use
 
-## Cons
+### Cons
 
 * The webjar does not work - it references buggy code. I've [submitted two issues to the webjar Github Repository](https://github.com/webjars/syntaxhighlighter/issues) (and they already fixed one) so hopefully it will get addressed. In the meantime, we have to add all the javascript files to our project.
 * Does not offer a plain text mode for easy copying like some syntax highlighters do.
