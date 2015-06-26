@@ -43,7 +43,7 @@ Use the autoloader to load the specific "brushes" you need. For example:
 
 Code to be formatted should be wrapped in script tags. Using &lt;script&gt; tags means you don't have to convert < to &amp;lt; like with &lt;pre&gt; tags.
 
-                <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
         <?xml version="1.0"?>
         <catalog>
            <book id="bk101">
