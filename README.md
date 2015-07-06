@@ -17,16 +17,16 @@
 
 Build the CSS and JS files [here](http://prismjs.com/download.html).
 
-Load these two files:
+These two files are required:
 
         prism.css        
         prism.js
 
-Execute prism after the html is loaded:
+Execute Prism after the html is loaded:
 
         Prism.highlightAll();
        
-Code to be formatted should be wrapped in pre and code tags like this:
+The code to be formatted should be wrapped in pre and code tags like this:
 
         <pre class="language-javascript">
         <code class="language-javascript">
@@ -86,10 +86,10 @@ For the sake of clarity, I left the angle brackets unconverted in the example be
 ### Pros
 
 * Dead simple to use - one js and one css file, and easy markup.
-* Looks good
-* Current
+* Looks good.
+* Current.
 
 ### Cons
 
-* No webjar (css and js are custom built so we'll be including those)
+* No webjar (css and js are custom built so we'll be including those).
 * Have to escape left angle brackets inside the pre tags.
