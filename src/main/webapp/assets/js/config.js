@@ -11,7 +11,14 @@ var require = {
 
         "domReady": ["../../webjars/requirejs-domready/2.0.1/domReady", "domReady"],
 
-        "prism": ["/assets/js/prism/prism", "js/prism/prism"]
+        "prism-core.min": ["../../webjars/prismjs/1.0.0/components/prism-core.min", "prism-core.min"],
+
+        "prism-clike.min": ["../../webjars/prismjs/1.0.0/components/prism-clike.min", "prism-clike.min"],
+
+        "prism-markup.min": ["../../webjars/prismjs/1.0.0/components/prism-markup.min", "prism-markup.min"],
+
+        "prism-javascript.min": ["../../webjars/prismjs/1.0.0/components/prism-javascript.min", "prism-javascript.min"]
+
     },
 
     shim: {
@@ -19,7 +26,7 @@ var require = {
         "bootstrap": {"deps": ["jquery"]}
     },
 
-    deps: ["jquery"],
+    deps: ["jquery", "prism-core.min", "prism-clike.min"],
 
     callback: function () {
         // Load RequireJS module configurations after RequireJS is loaded.

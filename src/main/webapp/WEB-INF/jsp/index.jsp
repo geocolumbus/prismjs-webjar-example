@@ -16,8 +16,8 @@
     <script src="<c:url value='/webjars/requirejs/2.1.18/require.min.js'/>"></script>
 
     <link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.3.1/css/bootstrap.min.css'/>"/>
+    <link rel="stylesheet" href="<c:url value='/webjars/prismjs/1.0.0/themes/prism.css'/>"/>
     <link rel="stylesheet" href="<c:url value='/assets/css/style.css'/>"/>
-    <link rel="stylesheet" href="<c:url value='/assets/css/prism/prism.css'/>"/>
 
 </head>
 <body>

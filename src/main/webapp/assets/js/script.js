@@ -1,5 +1,5 @@
 "use strict";
-require(["jquery", "bootstrap", "prism"], function ($, bootstrap) {
+require(["jquery", "bootstrap", "prism-core.min", "prism-markup.min", "prism-clike.min", "prism-javascript.min"], function ($, bootstrap) {
 
     // Initialize -----------------------------------------------------------------------------------------------------
 
