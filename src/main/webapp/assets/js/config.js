@@ -23,10 +23,13 @@ var require = {
 
     shim: {
         "jquery": {"exports": "$"},
-        "bootstrap": {"deps": ["jquery"]}
+        "bootstrap": {"deps": ["jquery"]},
+        "prism-clike.min":{"deps":["prism-core.min"]},
+        "prism-javascript.min":{"deps":["prism-clike.min"]},
+        "prism-markup.min":{"deps":["prism-core.min"]}
     },
 
-    deps: ["jquery", "prism-core.min", "prism-clike.min"],
+    deps: ["jquery", "prism-javascript.min","prism-markup.min"],
 
     callback: function () {
         // Load RequireJS module configurations after RequireJS is loaded.
