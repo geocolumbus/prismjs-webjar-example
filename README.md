@@ -21,7 +21,7 @@ Traditionally, you go to the PrismJS website, construct a custom js and css file
 the types of code you wish to highlight and serve that those scripts as static resources. However,
 if your project has many client side components, you may wish to use WebJars to manage them.
 
-In this example, I wanted to highlight xml and json, so I added this webjar to my POM:
+In this example, I wanted to highlight xml and json, so I added [the PrismJS WebJar](https://github.com/webjars/prismjs) to my POM:
 
         <dependency>
             <groupId>org.webjars</groupId>
