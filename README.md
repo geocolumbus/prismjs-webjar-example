@@ -1,5 +1,7 @@
 # Code colorizer example with [Prism](http://prismjs.com/)
 
+I created this simple application to test the PrismJS webjar that I contributed to webjars.org
+
 ### Requirements
 
 * Java 8
@@ -13,83 +15,60 @@
 
         Navigate to localhost:8080
 
-### How it works
+### How to use PrismJS with a WebJar.
 
-Build the CSS and JS files [here](http://prismjs.com/download.html).
+Traditionally, you go to the PrismJS website, construct a custom js and css file with
+the types of code you wish to highlight and serve that those scripts as static resources. However,
+if your project has many client side components, you may wish to use WebJars to manage them.
 
-These two files are required:
+In this example, I wanted to highlight xml and json, so I added this webjar to my POM:
 
-        prism.css        
-        prism.js
-
-Execute Prism after the html is loaded:
-
-        Prism.highlightAll();
-       
-The code to be formatted should be wrapped in pre and code tags like this:
-
-        <pre class="language-javascript">
-        <code class="language-javascript">
-        {  
-           "menu":{  
-              "id":"file",
-              "value":"File",
-              "popup":{  
-                 "menuitem":[  
-                    {  
-                       "value":"New",
-                       "onclick":"CreateNewDoc()"
-                    }
-                 ]
-              }
-           }
-        }
-        </code>
-        </pre>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>prismjs</artifactId>
+            <version>1.0.0</version>
+            <scope>runtime</scope>
+        </dependency>
         
-in the case of xml, I did have to do a global replace on "<" to "&amp;lt;".
+Then I created a requirejs configuration file. Note how I used the shims to insure that the PrismJS files
+were executed in proper dependency order.
 
-        // You have to handle left angle brackets in XML
-        $('.xml').each(function () {
-            $(this).html($(this).html().replace(/</g, "&lt;"));
-         });
+`prism-core -> prism-clike -> prism-javascript and prism-core -> prism-markdown`
 
-For the sake of clarity, I left the angle brackets unconverted in the example below.
+Finally, I set the specific formatting files as "deps" so that requirejs won't execute the callback until those are loaded. After taking out other components, like jQuery and Bootstrap, the simplified configuration file looks like this:
 
-        <pre class="language-markup">
-        <code class="language-markup">
-        <?xml version="1.0"?>
-        <catalog>
-           <book id="bk101">
-              <author>Gambardella, Matthew</author>
-              <title>XML Developer's Guide</title>
-              <genre>Computer</genre>
-              <price>44.95</price>
-              <publish_date>2000-10-01</publish_date>
-              <description>An in-depth look at creating applications 
-              with XML.</description>
-           </book>
-           <book id="bk102">
-              <author>Ralls, Kim</author>
-              <title>Midnight Rain</title>
-              <genre>Fantasy</genre>
-              <price>5.95</price>
-              <publish_date>2000-12-16</publish_date>
-              <description>A former architect battles corporate zombies, 
-              an evil sorceress, and her own childhood to become queen 
-              of the world.</description>
-           </book>
-        </catalog>
-        </code>
-        </pre>
 
-### Pros
+    var require = {
 
-* Dead simple to use - one js and one css file, and easy markup.
-* Looks good.
-* Current.
+    paths: {
+        "prism-core.min": ["../../webjars/prismjs/1.0.0/components/prism-core.min", "prism-core.min"],
 
-### Cons
+        "prism-clike.min": ["../../webjars/prismjs/1.0.0/components/prism-clike.min", "prism-clike.min"],
 
-* No webjar (css and js are custom built so we'll be including those).
-* Have to escape left angle brackets inside the pre tags.
+        "prism-markup.min": ["../../webjars/prismjs/1.0.0/components/prism-markup.min", "prism-markup.min"],
+
+        "prism-javascript.min": ["../../webjars/prismjs/1.0.0/components/prism-javascript.min", "prism-javascript.min"]
+    },
+
+    shim: {
+        "prism-clike.min": {"deps": ["prism-core.min"]},
+        "prism-javascript.min": {"deps": ["prism-clike.min"]},
+        "prism-markup.min": {"deps": ["prism-core.min"]}
+    },
+
+    deps: ["prism-javascript.min", "prism-markup.min"],
+
+    callback: function () {
+        // Load RequireJS module configurations after RequireJS is loaded.
+        console.log("RequireJS callback complete.");
+    }
+    };
+
+How did I figure out what files to include? By perusing the PrismJS
+project [components directory](https://github.com/PrismJS/prism/tree/gh-pages/components) on GitHub.
+Everything starts with prism-core, and many require prism-clike as the second dependency.
+In addition to the /components directory, this webjar serves files from the /plugins and /themes directories.
+
+
+7/17/2015 gcc
+
