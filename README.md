@@ -1,6 +1,6 @@
 # [PrismJS](http://prismjs.com/) WebJar example
 
-I created this simple Spring Boot application to demonstrate how to use the new PrismJS WebJar.
+I created this simple Spring Boot application to demonstrate how to use the [PrismJS WebJar](https://github.com/webjars/prismjs).
 
 ### Requirements
 
