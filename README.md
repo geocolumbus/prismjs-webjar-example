@@ -1,6 +1,6 @@
-# Code colorizer example with [Prism](http://prismjs.com/)
+# [PrismJS](http://prismjs.com/) WebJar example
 
-I created this simple application to test the PrismJS webjar that I contributed to webjars.org
+I created this simple Spring Boot application to demonstrate how to use the new PrismJS WebJar.
 
 ### Requirements
 
