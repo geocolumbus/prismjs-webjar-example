@@ -67,8 +67,11 @@ Finally, I set the specific formatting files as "deps" so that requirejs won't e
 How did I figure out what files to include? By perusing the PrismJS
 project [components directory](https://github.com/PrismJS/prism/tree/gh-pages/components) on GitHub.
 Everything starts with prism-core, and many require prism-clike as the second dependency.
-In addition to the /components directory, this webjar serves files from the /plugins and /themes directories.
+In addition to the /components directory, this webjar serves files from
+the [/plugins](https://github.com/PrismJS/prism/tree/gh-pages/plugins)
+and [/themes](https://github.com/PrismJS/prism/tree/gh-pages/themes) directories.
 
+See the [PrismJS Website](http://prismjs.com/) or the [PrismJS Github Project](https://github.com/PrismJS/prism) for more details.
 
-7/17/2015 gcc
+2015-07-17 gcc
 
