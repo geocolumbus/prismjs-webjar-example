@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<h1>Colorizer Tester</h1>
+<h1>PrismJS WebJar Example</h1>
 
 <div id="container-jsprism" class="demo-container">
 
