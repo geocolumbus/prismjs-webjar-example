@@ -21,7 +21,7 @@ Traditionally, you go to the PrismJS website, construct a custom js and css file
 the types of code you wish to highlight and serve that those scripts as static resources. However,
 if your project has many client side components, you may wish to use WebJars to manage them.
 
-In this example, I wanted to highlight xml and json, so I added [the PrismJS WebJar](https://github.com/webjars/prismjs) to my POM:
+This example shows how to highlight xml and json, so add [the PrismJS WebJar](https://github.com/webjars/prismjs) to your POM:
 
         <dependency>
             <groupId>org.webjars</groupId>
@@ -30,12 +30,11 @@ In this example, I wanted to highlight xml and json, so I added [the PrismJS Web
             <scope>runtime</scope>
         </dependency>
         
-Then I created a requirejs configuration file. Note how I used the shims to insure that the PrismJS files
-were executed in proper dependency order.
+Next, create a requirejs configuration file. Use shims to insure that the PrismJS files are executed in proper dependency order.
 
 `prism-core -> prism-clike -> prism-javascript and prism-core -> prism-markdown`
 
-Finally, I set the specific formatting files as "deps" so that requirejs won't execute the callback until those are loaded. After taking out other components, like jQuery and Bootstrap, the simplified configuration file looks like this:
+Set the specific formatting files as "deps" so that requirejs won't execute the callback until those are loaded. After taking out other components, like jQuery and Bootstrap, the simplified configuration file looks like this:
 
 
     var require = {
@@ -64,7 +63,7 @@ Finally, I set the specific formatting files as "deps" so that requirejs won't e
     }
     };
 
-How did I figure out what files to include? By perusing the PrismJS
+You can figure out what files to include by perusing the PrismJS
 project [components directory](https://github.com/PrismJS/prism/tree/gh-pages/components) on GitHub.
 Everything starts with prism-core, and many require prism-clike as the second dependency.
 In addition to the /components directory, this webjar serves files from
@@ -72,6 +71,3 @@ the [/plugins](https://github.com/PrismJS/prism/tree/gh-pages/plugins)
 and [/themes](https://github.com/PrismJS/prism/tree/gh-pages/themes) directories.
 
 See the [PrismJS Website](http://prismjs.com/) or the [PrismJS Github Project](https://github.com/PrismJS/prism) for more details.
-
-2015-07-17 gcc
-
